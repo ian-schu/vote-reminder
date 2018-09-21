@@ -11,9 +11,9 @@
    ========================================================================== */
 
 html {
-    color: #222;
-    font-size: 1em;
-    line-height: 1.4;
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
 }
 
 /*
@@ -27,13 +27,13 @@ html {
  */
 
 ::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
-    text-shadow: none;
+  background: #b3d4fc;
+  text-shadow: none;
 }
 
 /*
@@ -41,12 +41,12 @@ html {
  */
 
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
 }
 
 /*
@@ -61,7 +61,7 @@ iframe,
 img,
 svg,
 video {
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 /*
@@ -69,9 +69,9 @@ video {
  */
 
 fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /*
@@ -79,7 +79,7 @@ fieldset {
  */
 
 textarea {
-    resize: vertical;
+  resize: vertical;
 }
 
 /* ==========================================================================
@@ -87,10 +87,10 @@ textarea {
    ========================================================================== */
 
 .browserupgrade {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
 }
 
 /* ==========================================================================
@@ -98,16 +98,74 @@ textarea {
    ========================================================================== */
 
 
+body {
+  font-size: 1.1em;
+  color: #fff;
+  font-family: 'Libre Franklin', sans-serif;
+  background-color: #132639;
+}
 
+#header {
+  z-index: 10;
+  background-color: #132639;
+  top: 0px;
+  width: 100%;
+  position: fixed;
+  display: block;
+  background: #132639;
+  height: 100px;
+  border-bottom: 1px solid #fff;
+}
 
+#header>* {
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
 
+#header>p {
+  font-size: 1.2rem;
+}
 
+#main {
+  text-align: center;
+  position: relative;
+  top: 110px;
+  width: 95vw;
+  margin: 0 auto;
+  display: block;
+}
 
+.soft, footer {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6)
+}
 
+.emphatic {
+  font-style: italic;
+  text-align: center;
+}
 
+button {
+  display: block;
+  margin: 1em auto;
+  color: #fff;
+  background: transparent;
+  border: 2px solid #fff;
+  padding: 1rem;
+}
 
+button:hover {
+  background-color: #b8860b
+}
 
+a, a:visited {
+  color:#fff
+}
 
+a:hover {
+  color: #b8860b
+}
 
 
 
@@ -122,7 +180,7 @@ textarea {
  */
 
 .hidden {
-    display: none !important;
+  display: none !important;
 }
 
 /*
@@ -130,20 +188,20 @@ textarea {
  * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  *
  * 1. For long content, line feeds are not interpreted as spaces and small width
- *    causes content to wrap 1 word per line:
- *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ *  causes content to wrap 1 word per line:
+ *  https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
  */
 
 .visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-    white-space: nowrap; /* 1 */
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap; /* 1 */
 }
 
 /*
@@ -154,13 +212,13 @@ textarea {
 
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-    white-space: inherit;
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+  white-space: inherit;
 }
 
 /*
@@ -168,7 +226,7 @@ textarea {
  */
 
 .invisible {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 /*
@@ -176,21 +234,21 @@ textarea {
  *
  * For modern browsers
  * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
+ *  `contenteditable` attribute is included anywhere else in the document.
+ *  Otherwise it causes space to appear at the top and bottom of elements
+ *  that receive the `clearfix` class.
  * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
+ *  `:before` to contain the top-margins of child elements.
  */
 
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+  content: " "; /* 1 */
+  display: table; /* 2 */
 }
 
 .clearfix:after {
-    clear: both;
+  clear: both;
 }
 
 /* ==========================================================================
@@ -200,14 +258,17 @@ textarea {
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
+  #header {
+    top: 15px;
+  }
+  /* Style adjustments for viewports that meet the condition */
 }
 
 @media print,
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 1.25dppx),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
+     (-webkit-min-device-pixel-ratio: 1.25),
+     (min-resolution: 1.25dppx),
+     (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
 }
 
 /* ==========================================================================
@@ -217,71 +278,71 @@ textarea {
    ========================================================================== */
 
 @media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster */
-        -webkit-box-shadow: none !important;
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important; /* Black prints faster */
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
 
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
 
-    /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
 
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
 
-    pre {
-        white-space: pre-wrap !important;
-    }
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
+  pre {
+    white-space: pre-wrap !important;
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
 
-    /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
+  /*
+   * Printing Tables:
+   * http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
 
-    thead {
-        display: table-header-group;
-    }
+  thead {
+    display: table-header-group;
+  }
 
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
 
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
 
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }
