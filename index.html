@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css?family=Exo+2:800|Gudea" rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/custom.scss">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_red.css">
 
@@ -27,10 +28,8 @@
   </div>
   <div id="main">
     <section class="hero">
-      <div class="hero__icons">
+      <div class="hero__texas">
         <img class="icon ballot-box" src="./img/006-vote-3.svg" alt="Ballot box vector illustration">
-        <img class="icon texas" src="./img/007-texas.svg" alt="Texas vector illustration">
-        <img class="icon ballot" src="./img/004-vote-1.svg" alt="Ballot vector illustration">
       </div>
       <h1 class="hero__text">Texas ranks dead last in voter turnout.
         <a target="_blank" 
@@ -39,7 +38,7 @@
     </section>
     <section id="form-area">
       <p>But if you set aside time during early voting, you might just help change that.</p>
-      <button id="startButton" type="button" onclick="showForm()">Pick a time to vote!</button>
+      <button id="startButton" type="button">Pick a time to vote!</button>
       <form id="form">
         <input id="date-picker"/>
         <span>at</span>

@@ -35,7 +35,6 @@ const validDate = date => {
 
 const validTime = time => {
   let selected = flatpickr.parseDate(time, "H:i");
-  console.log(selected);
   let result = true;
   if (selected.getHours() < 7) result = false;
   if (selected.getHours() > 18) result = false;
@@ -64,6 +63,8 @@ const form = document.getElementById("form");
 
 const datePicker = flatpickr(dateInput, dateConfig);
 const timePicker = flatpickr(timeInput, timeConfig);
+
+startButton.addEventListener("click", showForm);
 
 dateInput.addEventListener("input", (e) => {
   if (!validDate(e.target.value)) {
