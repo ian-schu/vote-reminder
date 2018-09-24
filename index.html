@@ -48,13 +48,13 @@
           <div id="errors"></div>
         </fieldset>
         <fieldset id="calendar-fieldset">
-          <legend>Pick a calendar</legend>
-          <select id="calendar-picker">
-            <option value="">Select one</option>
-            <option value="google">Google Calendar</option>
-            <option value="ical">iCal</option>
-            <option value="yahoo">Yahoo</option>
-          </select>
+          <legend>Choose your calendar</legend>
+            <input name="calendar" type="radio" id="google" value="google"></>
+            <label for="google">Google</label>
+            <input name="calendar" type="radio" id="ical" value="ical"></>
+            <label for="ical">iCal</label>
+            <input name="calendar" type="radio" id="yahoo" value="yahoo"></>
+            <label for="yahoo">Yahoo</label>
         </fieldset>
         <button id="finishButton" type="submit">Send to Calendar</button>
       </form>
