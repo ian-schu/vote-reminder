@@ -64,7 +64,11 @@ const form = document.getElementById("form");
 const datePicker = flatpickr(dateInput, dateConfig);
 const timePicker = flatpickr(timeInput, timeConfig);
 
+const dateFlatpickr = document.querySelector(".flatpickr-input[type=\"date\"]");
+const timeFlatpickr = document.querySelector(".flatpickr-input[type=\"time\"]");
+
 startButton.addEventListener("click", showForm);
+finishButton.addEventListener("click", () => addToCalendar());
 
 dateInput.addEventListener("input", (e) => {
   if (!validDate(e.target.value)) {
@@ -82,5 +86,55 @@ timeInput.addEventListener("input", (e) => {
   }
 });
 
-let dateFlatpickr = document.querySelector(".flatpickr-input[type=\"date\"]");
-let timeFlatpickr = document.querySelector(".flatpickr-input[type=\"time\"]");
+
+// Calendar handlers
+import {ics} from "./vendor/ics";
+import buildUrl from "build-url";
+
+const cal = new ics();
+
+const title = "Don't forget to vote!";
+const details = `Thanks for setting a reminder! Congrats on being a part of the solution.
+
+To find your voting location, go here:
+https://teamrv-mvp.sos.texas.gov/MVP/mvp.do
+
+This message brought to you by VoteReminder.us`;
+
+const getCalendarSelection = () => {
+  let radio = document.querySelector("input[name=\"calendar\"]:checked") || "";
+  return radio ? radio.value : "";
+};
+
+const addToCalendar = () => {
+  let calendarSelection = getCalendarSelection();
+  let selectedDate = new Date(flatpickr.parseDate(dateInput.value+timeInput.value,"Y-m-d H:i"));
+  let googleDateString = selectedDate.toISOString().replace(/-|:|\.\d\d\d/g,"");
+  let dateSelection = dateInput.value.replace(/-/g,"");
+  let timeSelection = timeInput.value.replace(/:/g,"");
+  let assembledDate = `${dateSelection}T${timeSelection}`;
+  // let assembledDate = `${dateSelection.getFullYear()}${dateSelection.getMonth()}${dateSelection.getDate()}`;
+
+
+  if (calendarSelection === "ical") {
+    console.log("iCal selected");
+  } else if (calendarSelection === "google") {
+    let destination = buildUrl("https://www.google.com",
+      {
+        path: "calendar/render",
+        queryParams: {
+          action: "TEMPLATE",
+          text: title,
+          details: details,
+          location: "See description for link",
+          dates: `${googleDateString}/${googleDateString}`
+        }
+      }
+    );
+    location.assign(destination);
+  } else if (calendarSelection === "yahoo") {
+    console.log("Yahoo selected");
+  } else {
+    console.log("No calendar selected");
+  }
+};
