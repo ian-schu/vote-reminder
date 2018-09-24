@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_red.css">
+
 </head>
 
 <body>
@@ -34,11 +36,12 @@
         <a target="_blank" 
         href="https://www.chron.com/news/houston-texas/texas/article/Voter-turnout-in-Texas-is-dead-last-in-America-13241845.php">*</a>
       </h1>
-      <p class="hero__text">But if you just schedule a time to vote, you can help change that.</p>
     </section>
-    <section class="scheduler">
-      <input class="flatpickr" placeholder="Pick an early voting day" id="date-picker">
-      <input class="flatpickr" placeholder="Find a time within polling hours" id="time-picker">
+    <section id="form-area">
+      <p>But if you set aside time during early voting, you might just help change that.</p>
+      <input id="date-picker"/>
+      <span>at</span>
+      <input id="time-picker"/>
     </section>
   </div>
   <!-- <footer>

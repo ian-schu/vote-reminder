@@ -1,17 +1,24 @@
+const defaultSelection = new Date('October 22, 2018');
+
 let dateConfig = {
   altInput: true,
-  altFormat: 'F j, Y',
+  altFormat: 'M j, Y',
   dateFormat: 'Y-m-d',
-  enable: ['2018-10-22', '2018-10-23' ]
+  enabled: ['2018-10-22','2018-10-23'],
+  defaultDate: '2018-10-22',
 };
 
 let timeConfig = {
-  enableTime: true,
   noCalendar: true,
+  enableTime: true,
+  minuteIncrement: 5,
   dateFormat: 'H:i',
+  defaultDate: '10:30',
   minTime: '07:00',
   maxTime: '18:30',
 };
 
-flatpickr('#date-picker', dateConfig);
-flatpickr('#time-picker', timeConfig);
+const dateInput = document.getElementById('date-picker');
+const datePicker = flatpickr(dateInput, dateConfig);
+const timeInput = document.getElementById('time-picker');
+const timePicker = flatpickr(timeInput, timeConfig);

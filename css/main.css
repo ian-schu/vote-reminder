@@ -183,6 +183,7 @@ h1.hero__text {
 
 p.hero__text {
   color: #2E86AB;
+  margin: 1vh 0;
 }
 
 .soft, footer {
@@ -194,14 +195,23 @@ p.hero__text {
   text-align: center;
 }
 
-.flatpickr {
-  font-size: 5vw;
-  border: 1px solid gray;
-  display: inline-block;
+#form-area {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
 }
 
-#date-picker {
-  width: 25vw;
+#form-area p {
+  font-size: 1rem;
+  margin: 0.5rem 1rem;
+}
+
+.flatpickr-input {
+  font-size: 4vw;
+  border: 1px solid gray;
+  display: inline-block;
+  margin: 0 1vw;
+  width: auto;
 }
 
 button {
