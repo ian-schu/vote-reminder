@@ -40,14 +40,27 @@
       <p>But if you set aside time during early voting, you might just help change that.</p>
       <button id="startButton" type="button">Pick a time to vote!</button>
       <form id="form">
-        <input id="date-picker"/>
-        <span>at</span>
-        <input id="time-picker"/>
-        <div id="errors"></div>
-        <button disabled id="finishButton" type="submit">Send to Calendar</button>
+        <fieldset id="date-time-fieldset">
+          <legend>Pick a reminder time</legend>
+          <input id="date-picker"/>
+          <span>at</span>
+          <input id="time-picker"/>
+          <div id="errors"></div>
+        </fieldset>
+        <fieldset id="calendar-fieldset">
+          <legend>Pick a calendar</legend>
+          <select id="calendar-picker">
+            <option value="">Select one</option>
+            <option value="google">Google Calendar</option>
+            <option value="ical">iCal</option>
+            <option value="yahoo">Yahoo</option>
+          </select>
+        </fieldset>
+        <button id="finishButton" type="submit">Send to Calendar</button>
       </form>
     </section>
   </div>
+
   <!-- <footer>
     by <a target="_blank" href="http://boler.work">Robert Boler</a> && 
     <a target="_blank" href="http://www.ianschu.com">Ian Schumann</a> 

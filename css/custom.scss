@@ -61,6 +61,9 @@ h1, h2, h3, h4 {
     font-size: 9vw;
     margin: 1rem 0 0;
     line-height: 6vh;
+    a {
+      text-decoration: none;
+    }
   }
 }
 
@@ -75,28 +78,40 @@ h1, h2, h3, h4 {
   }
 }
 
-.flatpickr-input {
-  font-size: 4vw;
-  border: 2px solid #2E86AB;
-  display: inline-block;
-  margin: 0 1vw;
-  width: auto;
-}
-
-.error {
-  border: 2px dotted $primary-red;
-}
-
-#errors {
-  color: $primary-red;
-  font-size: 0.8rem;
-  text-align: center;
-  width: 70vw;
-  margin: 0 auto;
-}
 
 #form {
   display: none;
+  #calendar-fieldset {
+    text-align: center;
+  }
+  .flatpickr-input {
+    font-size: 4vw;
+    border: 2px solid #2E86AB;
+    display: inline-block;
+    margin: 0 1vw;
+    width: auto;
+  }
+  .error {
+    border: 2px dotted $primary-red;
+  }
+  fieldset {
+    legend {
+      font-weight: 700;
+      color: $light-blue;
+      font-size: 0.9rem;
+    }
+    select {
+      text-align: center;
+    }
+  }
+  #errors {
+    color: $primary-red;
+    font-size: 0.8rem;
+    text-align: center;
+    height: 1rem;
+    width: 70vw;
+    margin: 0 auto;
+  }
 }
 
 button {
@@ -122,8 +137,4 @@ a {
   &:hover {
     color: $light-cyan;
   }
-}
-
-.hero__text a {
-  text-decoration: none;
 }
