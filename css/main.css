@@ -177,7 +177,7 @@ h1,h2,h3,h4 {
 
 h1.hero__text {
   font-size: 9vw;
-  margin: 1rem 0;
+  margin: 1rem 0 0;
   line-height: 6vh;
 }
 
@@ -208,23 +208,43 @@ p.hero__text {
 
 .flatpickr-input {
   font-size: 4vw;
-  border: 1px solid gray;
+  border: 2px solid #2E86AB;
   display: inline-block;
   margin: 0 1vw;
   width: auto;
 }
 
+.error {
+  border: 2px dotted red;
+}
+
+#errors {
+  color: #d81a23;
+  font-size: 0.8rem;
+  text-align: center;
+  width: 70vw;
+  margin: 0 auto;
+}
+
+#form {
+  display: none;
+}
+
 button {
   display: block;
-  margin: 1em auto;
+  margin: 0.5rem auto 0;
   color: #2E86AB;
   background: transparent;
   border: 2px solid #2E86AB;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
-button:hover {
-  background-color: #B2F7EF
+button:disabled {
+  visibility: hidden;
+};
+
+button:hover, button:active {
+  background: #B2F7EF
 }
 
 a, a:visited {

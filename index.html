@@ -39,9 +39,14 @@
     </section>
     <section id="form-area">
       <p>But if you set aside time during early voting, you might just help change that.</p>
-      <input id="date-picker"/>
-      <span>at</span>
-      <input id="time-picker"/>
+      <button id="startButton" type="button" onclick="showForm()">Pick a time to vote!</button>
+      <form id="form">
+        <input id="date-picker"/>
+        <span>at</span>
+        <input id="time-picker"/>
+        <div id="errors"></div>
+        <button disabled id="finishButton" type="submit">Send to Calendar</button>
+      </form>
     </section>
   </div>
   <!-- <footer>
@@ -52,10 +57,9 @@
 
 
 
-  <script src="js/vendor/modernizr-3.6.0.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
