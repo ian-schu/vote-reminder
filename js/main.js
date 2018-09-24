@@ -90,16 +90,11 @@ timeInput.addEventListener("input", (e) => {
 // Calendar handlers
 import {ics} from "./vendor/ics";
 import buildUrl from "build-url";
-
-const cal = new ics();
+import {saveAs} from "file-saver/FileSaver";
 
 const title = "Don't forget to vote!";
-const details = `Thanks for setting a reminder! Congrats on being a part of the solution.
-
-To find your voting location, go here:
-https://teamrv-mvp.sos.texas.gov/MVP/mvp.do
-
-This message brought to you by VoteReminder.us`;
+const eventLocation = "See description for link";
+const details = "Thanks for setting a reminder! Congrats on being a part of the solution. To find your voting location, go here: https://teamrv-mvp.sos.texas.gov/MVP/mvp.do // This message brought to you by VoteReminder.us";
 
 const getCalendarSelection = () => {
   let radio = document.querySelector("input[name=\"calendar\"]:checked") || "";
@@ -108,17 +103,20 @@ const getCalendarSelection = () => {
 
 const addToCalendar = () => {
   let calendarSelection = getCalendarSelection();
-  let selectedDate = new Date(flatpickr.parseDate(dateInput.value+timeInput.value,"Y-m-d H:i"));
-  let googleDateString = selectedDate.toISOString().replace(/-|:|\.\d\d\d/g,"");
-  let dateSelection = dateInput.value.replace(/-/g,"");
-  let timeSelection = timeInput.value.replace(/:/g,"");
-  let assembledDate = `${dateSelection}T${timeSelection}`;
-  // let assembledDate = `${dateSelection.getFullYear()}${dateSelection.getMonth()}${dateSelection.getDate()}`;
-
+  let selectedDate = new Date(flatpickr.parseDate(`${dateInput.value} ${timeInput.value}`,"Y-m-d H:i"));
 
   if (calendarSelection === "ical") {
-    console.log("iCal selected");
+    let iCalStart = selectedDate.toLocaleString("en").replace(/,|:00(?=\s)/g,"");
+    console.log(iCalStart);
+    selectedDate.setHours(selectedDate.getHours()+1);
+    let iCalEnd = selectedDate.toLocaleString("en").replace(/,|:00(?=\s)/g,"");
+    console.log(iCalEnd);
+
+    let cal = new ics();
+    cal.addEvent(title,details,eventLocation,iCalStart,iCalEnd);
+    cal.download("vote-reminder",".ics");
   } else if (calendarSelection === "google") {
+    let googleString = selectedDate.toISOString().replace(/-|:|\.\d\d\d/g,"");
     let destination = buildUrl("https://www.google.com",
       {
         path: "calendar/render",
@@ -126,8 +124,8 @@ const addToCalendar = () => {
           action: "TEMPLATE",
           text: title,
           details: details,
-          location: "See description for link",
-          dates: `${googleDateString}/${googleDateString}`
+          location: eventLocation,
+          dates: `${googleString}/${googleString}`
         }
       }
     );

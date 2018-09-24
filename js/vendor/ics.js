@@ -1,6 +1,8 @@
 /* global saveAs, Blob, BlobBuilder, console */
 /* exported ics */
 
+import {saveAs} from "file-saver/FileSaver";
+
 export function ics(uidDomain, prodId) {
   "use strict";
 
