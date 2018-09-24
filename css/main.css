@@ -176,8 +176,9 @@ h1,h2,h3,h4 {
 }
 
 h1.hero__text {
+  font-size: 9vw;
   margin: 1rem 0;
-  line-height: 2.4rem;
+  line-height: 6vh;
 }
 
 p.hero__text {
@@ -191,6 +192,16 @@ p.hero__text {
 .emphatic {
   font-style: italic;
   text-align: center;
+}
+
+.flatpickr {
+  font-size: 5vw;
+  border: 1px solid gray;
+  display: inline-block;
+}
+
+#date-picker {
+  width: 25vw;
 }
 
 button {

@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css?family=Exo+2:800|Gudea" rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 
 <body>
@@ -35,31 +36,10 @@
       </h1>
       <p class="hero__text">But if you just schedule a time to vote, you can help change that.</p>
     </section>
-    <section>
-
+    <section class="scheduler">
+      <input class="flatpickr" placeholder="Pick an early voting day" id="date-picker">
+      <input class="flatpickr" placeholder="Find a time within polling hours" id="time-picker">
     </section>
-
-    <!-- <section id="step-1">
-      <p class="emphatic">You’re busy. But voting’s important. So let’s do this.</p>
-      <p>First, flip through <strong>Oct 22 - Nov 2, 2018</strong> on your calendar.</p>
-      <p class="soft">(This is when you can vote early.)  Find a few open spots before or after work.</p>
-      <p class="soft">You can also vote on Election Day, Nov 6, 2018. But you don’t want lines, they’re lame. </p>
-      <button>Select Date & Time</button>
-      <p class="emphatic">Nice!</p>
-    </section>
-    <hr/>
-    <section id="step-2">
-      <p class="emphatic">Now add this to your calendar -- this is the  whole point!</p>
-      <button>Add to Calendar</button>
-      <p class="soft">Look at you, you busy-but-civically-minded American.</p>
-      <p>Next step: don't get cold feet! Respect your date with democracy 🇺🇸</p>
-    </section>
-    <hr/>
-    <section id="finish">
-      <p class="soft">Circle back to this page if you need to create a new reminder.</p>
-      <p class="soft">And spread the word.</p>
-      <button>Share</button>
-    </section> -->
   </div>
   <!-- <footer>
     by <a target="_blank" href="http://boler.work">Robert Boler</a> && 
@@ -71,9 +51,8 @@
 
   <script src="js/vendor/modernizr-3.6.0.min.js"></script>
   <script src="js/plugins.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="js/main.js"></script>
-
-
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
