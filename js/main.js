@@ -88,13 +88,19 @@ timeInput.addEventListener("input", (e) => {
 
 
 // Calendar handlers
-import {ics} from "./vendor/ics";
+import ical from "ical-generator";
+import moment from "moment";
 import buildUrl from "build-url";
 import {saveAs} from "file-saver/FileSaver";
 
 const title = "Don't forget to vote!";
 const eventLocation = "See description for link";
-const details = "Thanks for setting a reminder! Congrats on being a part of the solution. To find your voting location, go here: https://teamrv-mvp.sos.texas.gov/MVP/mvp.do // This message brought to you by VoteReminder.us";
+const details = `Thanks for setting a reminder! Congrats on being a part of the solution.
+
+To find your voting location, go here:
+https://teamrv-mvp.sos.texas.gov/MVP/mvp.do
+
+This message brought to you by VoteReminder.us`;
 
 const getCalendarSelection = () => {
   let radio = document.querySelector("input[name=\"calendar\"]:checked") || "";
@@ -106,17 +112,37 @@ const addToCalendar = () => {
   let selectedDate = new Date(flatpickr.parseDate(`${dateInput.value} ${timeInput.value}`,"Y-m-d H:i"));
 
   if (calendarSelection === "ical") {
-    let iCalStart = selectedDate.toLocaleString("en").replace(/,|:00(?=\s)/g,"");
-    console.log(iCalStart);
-    selectedDate.setHours(selectedDate.getHours()+1);
-    let iCalEnd = selectedDate.toLocaleString("en").replace(/,|:00(?=\s)/g,"");
-    console.log(iCalEnd);
+    let start = moment(selectedDate);
+    let end = start.add(45,"minutes");
 
-    let cal = new ics();
-    cal.addEvent(title,details,eventLocation,iCalStart,iCalEnd);
-    cal.download("vote-reminder",".ics");
+    let description = details.replace(/\n/g,"\n");
+    let cal = ical({domain: "votereminder.us", name: "TX Midterm 2018"});
+
+    cal.createEvent({
+      start: start,
+      end: end,
+      timestamp: moment(),
+      summary: title,
+      organizer: {
+        name: "VoteReminder.us",
+        email: "ciizen@votereminder.us"
+      },
+      description: description,
+      location: eventLocation
+    });
+    console.log(cal.toString());
+
+    window.open( "data:text/calendar;charset=utf8,"+escape(cal.toString()));
+
+    // let blob = new Blob([cal.toString()], {type: "text/calendar;charset=utf-8"});
+    // let stamp = moment().format("M-D-hms");
+    // saveAs(blob, `vote-reminder-${stamp}.ics`);
+
   } else if (calendarSelection === "google") {
-    let googleString = selectedDate.toISOString().replace(/-|:|\.\d\d\d/g,"");
+    let googleStart = selectedDate.toISOString().replace(/-|:|\.\d\d\d/g,"");
+    selectedDate.setHours(selectedDate.getHours()+1);
+    let googleEnd = selectedDate.toISOString().replace(/-|:|\.\d\d\d/g,"");
+
     let destination = buildUrl("https://www.google.com",
       {
         path: "calendar/render",
@@ -125,7 +151,7 @@ const addToCalendar = () => {
           text: title,
           details: details,
           location: eventLocation,
-          dates: `${googleString}/${googleString}`
+          dates: `${googleStart}/${googleEnd}`
         }
       }
     );
