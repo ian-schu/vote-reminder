@@ -187,9 +187,6 @@ textarea {
    ========================================================================== */
 
 @media only screen and (min-width: 35em) {
-  #header {
-    top: 15px;
-  }
   /* Style adjustments for viewports that meet the condition */
 }
 

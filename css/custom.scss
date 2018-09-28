@@ -3,9 +3,12 @@ $dark-blue: #004c75;
 $light-cyan: #B2F7EF;
 $primary-red: #F24236;
 $darker-red: #d81a23;
+$pale-cyan: #9BC1BC;
+$tan: #F4F1BB;
 
 body {
   font-size: 1.1em;
+  background: #e7f9ff;
 }
 
 h1, h2, h3, h4 {
@@ -14,6 +17,7 @@ h1, h2, h3, h4 {
 
 #header {
   margin: 0;
+  background: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -123,7 +127,7 @@ button {
   display: block;
   margin: 0.5rem auto 0;
   color: $light-blue;
-  background: transparent;
+  background: #fff;
   border: 2px solid $light-blue;
   padding: 0.5rem;
   &:disabled {
@@ -142,4 +146,54 @@ a {
   &:hover {
     color: $light-cyan;
   }
+}
+
+@media only screen and (min-width: 600px) {
+  #header {
+    height: 70px;
+    h1 {
+      font-size: 40px;
+    }
+    .header-icon {
+      height: 100px;
+    }
+  }
+
+  #main {
+    display: grid;
+    grid-template-columns: 10% 25% 25% 10%;
+    grid-template-rows: 50% 50%;
+    // display: flex;
+    // flex-flow: column nowrap;
+    // justify-content: center;
+    // align-items: center;
+    width: 1000px;
+    height: 85vh;
+    .hero {
+      grid-column: 1/3;
+      grid-row: 1/2;
+      width: 80%;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      &__texas {
+        width: 80%;
+        margin-right: 50px;
+        .ballot-box {
+          margin-top: 190px;
+          margin-left: 220px;
+          height: 120px;
+        }
+      }
+      &__text {
+        font-size: 60px;
+        line-height: 50px;
+      }
+    }
+    #form-area {
+      width: 35%;
+    }
+  }
+
+
 }
