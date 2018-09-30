@@ -110,13 +110,6 @@ body {
   margin-top: 10px;
   width: 100%;
 
-  .flatpickr-input {
-    font-size: 4vw;
-    border: 2px solid #2E86AB;
-    display: inline-block;
-    margin: 0 1vw;
-    width: auto;
-  }
   .error {
     border: 2px dotted $primary-red;
   }
@@ -129,7 +122,7 @@ body {
       margin: -8px 0 10px;
     }
   }
-  .date-input {
+  .datetime-input {
     border-radius: 4px;
     color: #606060;
     border: 1px solid lightgray;
@@ -149,6 +142,7 @@ body {
     margin: 0 auto;
   }
   #calendar-fieldset {
+    visibility: hidden;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
