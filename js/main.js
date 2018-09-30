@@ -125,14 +125,15 @@ const addToCalendar = () => {
       summary: title,
       organizer: {
         name: "VoteReminder.us",
-        email: "ciizen@votereminder.us"
+        email: "citizen@votereminder.us"
       },
       description: description,
       location: eventLocation
     });
+
     console.log(cal.toString());
 
-    window.open( "data:text/calendar;charset=utf8,"+escape(cal.toString()));
+    // window.open( "data:text/calendar;charset=utf8,"+escape(cal.toString()));
 
     // let blob = new Blob([cal.toString()], {type: "text/calendar;charset=utf-8"});
     // let stamp = moment().format("M-D-hms");

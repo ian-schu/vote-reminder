@@ -12,7 +12,6 @@
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
 
-  <link href="https://fonts.googleapis.com/css?family=Exo+2:800|Gudea" rel="stylesheet">
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/custom.scss">
@@ -23,49 +22,98 @@
 
 <body>
   <div id="header">
-    <h1 id="title">Vote Reminder</h1>
+    <h1 id="title">VotingPlan.org</h1>
     <img class="header-icon" src="./img/noun-polling-place.svg" alt="Ballot vector icon">
   </div>
   <div id="main">
     <section class="hero">
+      <h1 class="hero__text">Make time to vote in 10 seconds.</h1>
       <div class="hero__texas">
         <img class="ballot-box" src="./img/006-vote-3.svg" alt="Ballot box vector illustration">
       </div>
-      <h1 class="hero__text">Texas ranks dead last in voter turnout.
-        <a target="_blank" 
-        href="https://www.chron.com/news/houston-texas/texas/article/Voter-turnout-in-Texas-is-dead-last-in-America-13241845.php">*</a>
-      </h1>
     </section>
     <section id="form-area">
-      <p>But if you just set a simple reminder to vote, you might just help change that.</p>
-      <button id="startButton" type="button">Pick a time to vote!</button>
+      <p>
+        <strong>Texas <a target="_blank" 
+        href="https://www.chron.com/news/houston-texas/texas/article/Voter-turnout-in-Texas-is-dead-last-in-America-13241845.php">ranks dead last</a> in voter turnout.</strong>
+        But if you set a simple reminder to vote, you might just help change that.
+      </p>
+      <button class="button--start red" id="startButton" type="button">Book time to vote ...</button>
       <form id="form">
         <fieldset id="date-time-fieldset">
-          <legend>Pick a reminder time</legend>
-          <input id="date-picker"/>
-          <span>at</span>
-          <input id="time-picker"/>
-          <div id="errors"></div>
+          <legend>Pick a time you'll be free</legend>
+          <legend class="small">(Limited to early voting days and election day)</legend>
+          <select class="date-input date">
+            <option value="">Choose a date ...</option>
+            <option value="10/22/18">Monday Oct 22nd</option>
+            <option value="10/23/18">Tuesday Oct 23rd</option>
+            <option value="11/6/18">Tuesday Nov 6th</option>
+          </select>
+          <select class="date-input date">
+            <option value="">... and a time ...</option>
+            <option value="7:00 AM">7:00 AM</option>
+            <option value="7:15 AM">7:15 AM</option>
+            <option value="7:30 AM">7:30 AM</option>
+            <option value="7:45 AM">7:45 AM</option>
+            <option value="8:00 AM">8:00 AM</option>
+            <option value="8:15 AM">8:15 AM</option>
+            <option value="8:30 AM">8:30 AM</option>
+            <option value="8:45 AM">8:45 AM</option>
+            <option value="9:00 AM">9:00 AM</option>
+            <option value="9:15 AM">9:15 AM</option>
+            <option value="9:30 AM">9:30 AM</option>
+            <option value="9:45 AM">9:45 AM</option>
+            <option value="10:00 AM">10:00 AM</option>
+            <option value="10:15 AM">10:15 AM</option>
+            <option value="10:30 AM">10:30 AM</option>
+            <option value="10:45 AM">10:45 AM</option>
+            <option value="11:00 AM">11:00 AM</option>
+            <option value="11:15 AM">11:15 AM</option>
+            <option value="11:30 AM">11:30 AM</option>
+            <option value="11:45 AM">11:45 AM</option>
+            <option value="12:00 PM">12:00 PM</option>
+            <option value="12:15 PM">12:15 PM</option>
+            <option value="12:30 PM">12:30 PM</option>
+            <option value="12:45 PM">12:45 PM</option>
+            <option value="1:00 PM">1:00 PM</option>
+            <option value="1:15 PM">1:15 PM</option>
+            <option value="1:30 PM">1:30 PM</option>
+            <option value="1:45 PM">1:45 PM</option>
+            <option value="2:00 PM">2:00 PM</option>
+            <option value="2:15 PM">2:15 PM</option>
+            <option value="2:30 PM">2:30 PM</option>
+            <option value="2:45 PM">2:45 PM</option>
+            <option value="3:00 PM">3:00 PM</option>
+            <option value="3:15 PM">3:15 PM</option>
+            <option value="3:30 PM">3:30 PM</option>
+            <option value="3:45 PM">3:45 PM</option>
+            <option value="4:00 PM">4:00 PM</option>
+            <option value="4:15 PM">4:15 PM</option>
+            <option value="4:30 PM">4:30 PM</option>
+            <option value="4:45 PM">4:45 PM</option>
+            <option value="5:00 PM">5:00 PM</option>
+            <option value="5:15 PM">5:15 PM</option>
+            <option value="5:30 PM">5:30 PM</option>
+            <option value="5:45 PM">5:45 PM</option>
+            <option value="6:00 PM">6:00 PM</option>
+            <option value="6:15 PM">6:15 PM</option>
+            <option value="6:30 PM">6:30 PM</option>
+          </select>
         </fieldset>
-        <fieldset id="calendar-fieldset">
-          <legend>Choose your calendar</legend>
-            <input name="calendar" type="radio" id="google" value="google"></>
-            <label for="google">Google</label>
-            <input name="calendar" type="radio" id="ical" value="ical"></>
-            <label for="ical">iCal</label>
-            <input name="calendar" type="radio" id="yahoo" value="yahoo"></>
-            <label for="yahoo">Yahoo</label>
-        </fieldset>
-        <button id="finishButton" type="button">Send to Calendar</button>
+        <div id="calendar-fieldset">
+          <legend>Pick your calendar:</legend>
+          <button class="button--calendar green" id="finishButton" type="button">Send to Apple</button>
+          <button class="button--calendar blue" id="finishButton" type="button">Send to Google</button>
+        </div>
       </form>
     </section>
   </div>
 
-  <!-- <footer>
-    by <a target="_blank" href="http://boler.work">Robert Boler</a> && 
-    <a target="_blank" href="http://www.ianschu.com">Ian Schumann</a> 
-    | Don't steal content. Shame.
-  </footer> -->
+  <footer>
+    <p>This is a free, nonpartisan tool to encourage voter turnout in Texas, unaffiliated with any party or campaign.</p>
+    <p>Made by <a target="_blank" href="http://boler.work">Robert</a> and <a target="_blank" href="http://www.ianschu.com">Ian</a>
+       with 🤔 😅 🤠 in Austin TX.</p>
+  </footer>
 
 
 

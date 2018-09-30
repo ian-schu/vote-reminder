@@ -1,0 +1,65 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link href="https://fonts.googleapis.com/css?family=Exo+2:800|Gudea" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/custom.scss">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_red.css">
+
+</head>
+
+<body>
+  <a id="test" href="#">Demo</a>
+  <script>
+    var icsMSG = "BEGIN:VCALENDAR\n" +
+    "VERSION:2.0\n" +
+    "PRODID:-//www.marudot.com//iCal Event Maker\n" +
+    "CALSCALE:GREGORIAN\n" +
+    "BEGIN:VTIMEZONE\n" +
+    "TZID:Asia/Damascus\n" +
+    "TZURL:http://tzurl.org/zoneinfo-outlook/Asia/Damascus\n" +
+    "X-LIC-LOCATION:Asia/Damascus\n" +
+    "BEGIN:STANDARD\n" +
+    "TZOFFSETFROM:+0300\n" +
+    "TZOFFSETTO:+0200\n" +
+    "TZNAME:EET\n" +
+    "DTSTART:19701030T000000\n" +
+    "RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1FR\n" +
+    "END:STANDARD\n" +
+    "BEGIN:DAYLIGHT\n" +
+    "TZOFFSETFROM:+0200\n" +
+    "TZOFFSETTO:+0300\n" +
+    "TZNAME:EEST\n" +
+    "DTSTART:19700327T000000\n" +
+    "RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1FR\n" +
+    "END:DAYLIGHT\n" +
+    "END:VTIMEZONE\n" +
+    "BEGIN:VEVENT\n" +
+    "DTSTAMP:20180502T071600Z\n" +
+    "UID:20180502T071600Z-1723765681@marudot.com\n" +
+    "DTSTART;TZID=\"Asia/Damascus\":20180509T120000\n" +
+    "DTEND;TZID=\"Asia/Damascus\":20180510T120000\n" +
+    "SUMMARY:scaxczads\n" +
+    "END:VEVENT";
+
+    document.getElementById('test').addEventListener('click', function() {
+      window.open("data:text/calendar;charset=utf8," + escape(icsMSG));
+    });
+  </script>
+ 
+</body>
+
+</html>
