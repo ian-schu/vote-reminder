@@ -8,12 +8,12 @@ $primary-green: #26d163;
 
 body {
   font-size: 1.1em;
-  font-family: 'Geneva', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
-// h1, h2, h3, h4 {
-//   font-family: 'Exo 2', sans-serif;
-// }
+h1, h2, h3, h4 {
+  font-family: 'Proza Libre', sans-serif;
+}
 
 #header {
   margin: 0;
@@ -32,6 +32,7 @@ body {
     font-size: 1.3rem;
   }
   #title {
+    font-variant: small-caps;
     font-style: italic;
     color: #fff;
   }
@@ -114,7 +115,6 @@ body {
     border: 2px dotted $primary-red;
   }
   legend {
-    font-weight: 700;
     font-size: 1.2rem;
     margin: 10px 0 10px;
     &.small {
@@ -140,6 +140,14 @@ body {
     height: 1rem;
     width: 70vw;
     margin: 0 auto;
+  }
+  #vote-help {
+    margin: 10px 0 0;
+    text-align: center;
+    p {
+      margin: 0 10px 3px;
+      font-size: 0.8rem;
+    }
   }
   #calendar-fieldset {
     visibility: hidden;
@@ -192,12 +200,28 @@ a {
   }
 }
 
+#thanks {
+  display: none;
+  margin: 10px 30px;
+  p strong{
+    font-weight: bolder;
+  }
+  .button--thanks {
+    min-width: 150px;
+    display: block;
+    color: #fff;
+    font-size: 1.3rem;
+    margin: 0.5rem auto 0;
+    padding: 10px 15px;
+  }
+}
+
 footer {
   width: 90%;
   margin: 20px 15px;
   padding: 10px 5px;
-  font-size: 0.85rem;
-  line-height: 1.3rem;
+  font-size: 0.8rem;
+  line-height: 1.1rem;
   color: #606060;
   border-top: 1px solid lightgray;
 }

@@ -85,14 +85,14 @@ import ical from "ical-generator";
 import moment from "moment";
 import buildUrl from "build-url";
 
-const title = "Don't forget to vote!";
+const title = "Voting time!";
 const eventLocation = "See description for link";
-const details = `Thanks for setting a reminder! Congrats on being a part of the solution.
+const details = `Thanks for being a part of the solution!
 
-To find your voting location, go here:
+To get all your specific, local details for voting, enter your personal info here:
 https://teamrv-mvp.sos.texas.gov/MVP/mvp.do
 
-This message brought to you by VoteReminder.us`;
+This message brought to you by VotingPlan.org`;
 
 const sendToGoogle = ev => {
   ev.preventDefault();
@@ -121,7 +121,7 @@ const sendToApple = ev => {
   let end = inputs.fullDateTime.clone().add(30,"minutes");
 
   let description = details.replace(/\n/g,"\n");
-  let cal = ical({domain: "votereminder.us", name: "TX Midterm 2018"});
+  let cal = ical({domain: "votingplan.org", name: "TX Midterm 2018"});
 
   cal.createEvent({
     start: start,
@@ -129,8 +129,8 @@ const sendToApple = ev => {
     timestamp: moment(),
     summary: title,
     organizer: {
-      name: "VoteReminder.us",
-      email: "citizen@votereminder.us"
+      name: "VotingPlan.org",
+      email: "citizen@votingplan.org"
     },
     description: description,
     location: eventLocation

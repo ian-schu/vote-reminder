@@ -15,8 +15,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/custom.scss">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_red.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Proza+Libre" rel="stylesheet">
 
 </head>
 
@@ -38,16 +37,26 @@
         href="https://www.chron.com/news/houston-texas/texas/article/Voter-turnout-in-Texas-is-dead-last-in-America-13241845.php">ranks dead last</a> in voter turnout.</strong>
         But if you set a simple reminder to vote, you might just help change that.
       </p>
-      <button class="button--start red" id="startButton" type="button">Book time to vote ...</button>
+      <button class="button--start red" id="bookTime" type="button">Book time to vote</button>
       <form id="form">
         <fieldset id="date-time-fieldset">
-          <legend>Pick a time you'll be free</legend>
+          <legend>Pick a time you'll be free:</legend>
           <legend class="small">(Limited to early voting days and election day)</legend>
           <select id="date-input" class="datetime-input">
             <option value="">Choose a date ...</option>
             <option value="10/22/18">Monday Oct 22nd</option>
             <option value="10/23/18">Tuesday Oct 23rd</option>
-            <option value="11/6/18">Tuesday Nov 6th</option>
+            <option value="10/24/18">Wednesday Oct 24th</option>
+            <option value="10/25/18">Thursday Oct 25th</option>
+            <option value="10/26/18">Friday Oct 26th</option>
+            <option value="10/27/18">Saturday Oct 27th</option>
+            <option value="10/28/18">Sunday Oct 28th</option>
+            <option value="10/29/18">Monday Oct 29th</option>
+            <option value="10/30/18">Tuesday Oct 30th</option>
+            <option value="10/31/18">Wednesday Oct 31st</option>
+            <option value="11/01/18">Thursday Nov 1st</option>
+            <option value="11/02/18">Friday Nov 2nd</option>
+            <option value="11/06/18">Tuesday Nov 6th</option>
           </select>
           <select id="time-input" class="datetime-input">
             <option value="">... and a time ...</option>
@@ -98,15 +107,28 @@
             <option value="6:00 PM">6:00 PM</option>
             <option value="6:15 PM">6:15 PM</option>
             <option value="6:30 PM">6:30 PM</option>
+            <option value="6:45 PM">6:45 PM</option>
           </select>
+          <div id="vote-help">
+            <p>FYI, locations and times vary by county!</p>
+            <p>To get your specific local details, login at 
+              <a href="https://teamrv-mvp.sos.texas.gov/MVP/mvp.do" target="_blank">
+              TX ElectioNet</a>.</p>
+          </div>
         </fieldset>
         <div id="calendar-fieldset">
           <legend>Pick your calendar:</legend>
-          <button class="button--calendar green" id="finishButton" type="button">Send to Apple</button>
-          <button class="button--calendar blue" id="finishButton" type="button">Send to Google</button>
+          <button class="button--calendar green" id="addToApple" type="button">Send to Apple</button>
+          <button class="button--calendar blue" id="addToGoogle" type="button">Send to Google</button>
         </div>
       </form>
     </section>
+
+    <section id="thanks">
+        <p>
+          <strong>Thanks for being a part of the solution!</strong>
+           Now spread the word to your busy friends.</p>
+      </section>
   </div>
 
   <footer>
@@ -118,7 +140,6 @@
 
 
   <script src="js/plugins.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="js/main.js" defer></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
