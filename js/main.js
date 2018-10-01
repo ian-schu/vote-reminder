@@ -136,5 +136,7 @@ const sendToApple = ev => {
     location: eventLocation
   });
 
-  window.open( "data:text/calendar;charset=utf8,"+escape(cal.toString()));
+  let eventFile = new Blob([cal.toString()], {type:"text/calendar"});
+  let eventLink = URL.createObjectURL(eventFile);
+  location.assign(eventLink);
 };
