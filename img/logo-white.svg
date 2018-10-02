@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="87px" viewBox="0 0 80 87" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>logo/medium/white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="logo/medium/white" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="logo-white">
+            <g id="Group" transform="translate(22.000000, 0.000000)">
+                <polygon id="Combined-Shape" fill="#FF470F" points="0 0.5 33 6 33 39 0 33.5"></polygon>
+                <polygon id="Rectangle-2" fill="#FFFFFF" points="3 11.5 30 15.5588235 30 34.5 3 30.4411765"></polygon>
+                <polygon id="Rectangle-2" fill="#CA2F00" points="6 5 26.5 8.27979952 26.5 12.220976 6 8.94117647"></polygon>
+            </g>
+            <g id="Group-2" transform="translate(0.000000, 34.000000)">
+                <polygon id="Rectangle-2" fill="#FFFFFF" points="0 10 57 20 57 53 0 43"></polygon>
+                <polygon id="Rectangle-2" fill="#DBDBDB" points="80 0 57 20 57 53 80 33"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
