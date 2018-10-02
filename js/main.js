@@ -48,17 +48,32 @@ const selectDateTime = (ev, key) => {
     inputs.fullDateTime = null;
   }
 
-  // console.log(inputs.fullDateTime);
-  showHideButtons();
+  setValidationErrors();
+  unDisableButtons();
 };
 
-const showHideButtons = () => {
+const unDisableButtons = () => {
   if (inputs.date && inputs.time) {
-    calendarFieldset.style.visibility = "visible";
+    addToApple.classList.remove('disabled')
+    addToGoogle.classList.remove('disabled')
   } else {
-    calendarFieldset.style.visibility = "hidden";
+    addToApple.classList.add('disabled')
+    addToGoogle.classList.add('disabled')
   }
 };
+
+const setValidationErrors = () => {
+  !inputs.date && dateInput.classList.add('invalid')
+  !inputs.time && timeInput.classList.add('invalid')
+
+  if (dateInput.classList.contains('invalid') && inputs.date) {
+    dateInput.classList.remove('invalid')
+  }
+
+  if (timeInput.classList.contains('invalid') && inputs.time) {
+    timeInput.classList.remove('invalid')
+  }
+}
 
 // ################
 // ADD LISTENERS
@@ -69,12 +84,18 @@ dateInput.addEventListener("input", ev => selectDateTime(ev, "date"));
 timeInput.addEventListener("input", ev => selectDateTime(ev, "time"));
 
 addToGoogle.addEventListener("click", ev => {
-  sendToGoogle(ev);
-  showThanks();
+  if (inputs.date && inputs.time) {
+    sendToGoogle(ev);
+    showThanks();
+  }
+  setValidationErrors();
 });
 addToApple.addEventListener("click", ev => {
-  sendToApple(ev);
-  showThanks();
+  if (inputs.date && inputs.time) {
+    sendToApple(ev);
+    showThanks();
+  }
+  setValidationErrors();
 });
 
 
