@@ -3,7 +3,8 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    Ian Schumann - engineer
+    Robert Boler - UX / UI
 
 # THANKS
 
@@ -13,3 +14,4 @@
 
     CSS3, HTML5
     Apache Server Configs, jQuery, Modernizr, Normalize.css
+    Parcel, BuildUrl, FileSaver, iCal-Generator
