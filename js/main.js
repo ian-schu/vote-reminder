@@ -92,7 +92,7 @@ const details = `Thanks for being a part of the solution!
 To get all your specific, local details for voting, enter your personal info here:
 https://teamrv-mvp.sos.texas.gov/MVP/mvp.do
 
-This message brought to you by VotingPlan.org`;
+Do you have family? Or friends? Great! Send them to www.votingplan.org and spread the civic love.`;
 
 const sendToGoogle = ev => {
   ev.preventDefault();
