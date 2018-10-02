@@ -3,6 +3,7 @@ $dark-blue: #004c75;
 $light-cyan: #B2F7EF;
 $primary-red: #fe3e64;
 $darker-red: #d81a23;
+$error-red: #ff4d4d;
 $primary-blue: #3771d9;
 $primary-green: #26d163;
 
@@ -115,6 +116,10 @@ h1, h2, h3, h4 {
     display: block;
     width: 80%;
     max-width: 300px;
+    &.invalid {
+      border: 1px solid $error-red;
+      color: $error-red;
+    }
   }
   #errors {
     color: $primary-red;
@@ -133,7 +138,6 @@ h1, h2, h3, h4 {
     }
   }
   #calendar-fieldset {
-    visibility: hidden;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -174,8 +178,8 @@ button {
       background: #213a67;
     }
   }
-  &:disabled {
-    visibility: hidden;
+  &.disabled {
+    opacity: 0.3;
   }
 }
 
