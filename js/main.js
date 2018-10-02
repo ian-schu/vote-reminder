@@ -48,7 +48,7 @@ const selectDateTime = (ev, key) => {
     inputs.fullDateTime = null;
   }
 
-  setValidationErrors();
+  setValidationErrors(key);
   unDisableButtons();
 };
 
@@ -62,9 +62,13 @@ const unDisableButtons = () => {
   }
 };
 
-const setValidationErrors = () => {
-  !inputs.date && dateInput.classList.add('invalid')
-  !inputs.time && timeInput.classList.add('invalid')
+const setValidationErrors = key => {
+  if (key) {
+    !inputs[key] && (`${key}Input`).classList.add('invalid');
+  } else {
+    !inputs.date && dateInput.classList.add('invalid');
+    !inputs.time && timeInput.classList.add('invalid');
+  }
 
   if (dateInput.classList.contains('invalid') && inputs.date) {
     dateInput.classList.remove('invalid')
