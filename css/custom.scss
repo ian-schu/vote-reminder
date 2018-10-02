@@ -175,18 +175,24 @@ button {
   border: none;
   &.red {
     background: $primary-red;
+    &:hover, &:active {
+      background: #ab1734;
+    }
   }
   &.green {
     background: $primary-green;
+    &:hover, &:active {
+      background: #216d3c
+    }
   }
   &.blue {
     background: $primary-blue;
+    &:hover, &:active {
+      background: #213a67;
+    }
   }
   &:disabled {
     visibility: hidden;
-  }
-  &:hover, &:active {
-    background: $light-cyan;
   }
 }
 
